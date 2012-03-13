@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class UpNext2012Robot extends IterativeRobot {
 
     CommandGroup autonomous;
-    SendableChooser autoChooser;
+    //SendableChooser autoChooser;
     DriverStation dStation;
 
     public UpNext2012Robot() {
@@ -39,10 +39,10 @@ public class UpNext2012Robot extends IterativeRobot {
         CommandBase.init();
 
         // smart dashboard stuff
-        autoChooser = new SendableChooser();
-        autoChooser.addDefault("Default program", new DoSomeAutonomousStuff());
-        autoChooser.addObject("Eperimental auto", new DoSomeOtherStuff());
-        SmartDashboard.putData("Autonomous mode chooser", autoChooser);
+        //autoChooser = new SendableChooser();
+        //autoChooser.addDefault("Default program", new DoSomeAutonomousStuff());
+        //autoChooser.addObject("Eperimental auto", new DoSomeOtherStuff());
+        //SmartDashboard.putData("Autonomous mode chooser", autoChooser);
 
         CommandBase.dumper.reset();
     }
