@@ -3,13 +3,9 @@ package com.teamupnext.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import com.teamupnext.robot.commands.CommandBase;
-import com.teamupnext.robot.commands.DoSomeAutonomousStuff;
-import com.teamupnext.robot.commands.DoSomeOtherStuff;
 
 import com.teamupnext.robot.commands.DriveForwardDump;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.Dashboard;
 import edu.wpi.first.wpilibj.DriverStation;

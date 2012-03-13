@@ -39,13 +39,12 @@ public class DriveTrain extends Subsystem {
         } catch (CANTimeoutException e) {
             System.out.println(e.getMessage());
         }
-
+        
         drive = new RobotDrive(jagFrontLeft, jagBackLeft, jagFrontRight, jagBackRight);
         //Inverts the right side of the robot
         drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);//
         drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-
-        //drive.setSafetyEnabled(false);
+        drive.setSafetyEnabled(false);
 
         rangeFinder = new AnalogChannel(RobotMap.RANGEFINDER_PORT);
 
