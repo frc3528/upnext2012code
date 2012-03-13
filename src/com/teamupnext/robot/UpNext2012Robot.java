@@ -99,13 +99,13 @@ public class UpNext2012Robot extends IterativeRobot {
         
     }
 
-    /*public void autonomousPeriodic() 
+    public void autonomousPeriodic() 
     {
-    Scheduler.getInstance().run();
-    } */
-    public void autonomousContinuous() {
+        Scheduler.getInstance().run();
+    } 
+    /*public void autonomousContinuous() {
         //Scheduler.getInstance().run();
-    }
+    }*/
 
     void updateDashboard() {
         Dashboard lowDashData = DriverStation.getInstance().getDashboardPackerLow();
