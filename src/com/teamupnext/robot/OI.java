@@ -1,14 +1,8 @@
 package com.teamupnext.robot;
 
-import com.teamupnext.robot.commands.DriveForwardEncoder;
-import com.teamupnext.robot.commands.DriveWhileHeld;
-import com.teamupnext.robot.commands.LowerBridgeTipper;
-import com.teamupnext.robot.commands.LowerScissorLift;
-import com.teamupnext.robot.commands.RaiseBridgeTipper;
-import com.teamupnext.robot.commands.RaiseScissorLift;
-import com.teamupnext.robot.commands.ReleaseBalls;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import com.teamupnext.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
     // Process operator interface input here.

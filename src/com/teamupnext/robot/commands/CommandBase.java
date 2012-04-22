@@ -1,15 +1,10 @@
 package com.teamupnext.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.teamupnext.robot.OI;
-import com.teamupnext.robot.subsystems.BridgeTipper;
-import com.teamupnext.robot.subsystems.Conveyor;
-import com.teamupnext.robot.subsystems.DriveTrain;
-import com.teamupnext.robot.subsystems.Dumper;
-import com.teamupnext.robot.subsystems.ScissorLift;
-//import com.teamupnext.robot.subsystems.Targeting;
+import com.teamupnext.robot.subsystems.*;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 //import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
