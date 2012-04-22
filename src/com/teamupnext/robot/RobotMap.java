@@ -33,9 +33,11 @@ public class RobotMap {
     public static final int OPTION_BRIDGE_LAST = 5;
     //End Autonomous Options Constants
     //Conveyor Constants
-    public static final int CONVEYOR_SPIKE_RELAY = 1;
+    public static final int CONVEYOR_PORT = 2;
     public static final Relay.Value CONVEYOR_UP = Relay.Value.kForward;
     public static final Relay.Value CONVEYOR_DOWN = Relay.Value.kReverse;
+    public static final double CONVEYOR_FORWARD = 1;
+    public static final double CONVEYOR_REVERSE = -1;
     public static final double CONVEYOR_DEADZONE = .5;
     //End Conveyor Constants
     //Scissor Lift Constants
@@ -70,7 +72,7 @@ public class RobotMap {
     //Bridge Tipper Constants
     public static final int BRIDGE_RELAY_PORT = 4;
     public static final double BRIDGE_TIME_TO_UP = 3;
-    public static final double BRIDGE_TIME_TO_DOWN = .4;
+    public static final double BRIDGE_TIME_TO_DOWN = .5;
     public static final Relay.Value TIPPER_DOWN = Relay.Value.kForward;
     public static final Relay.Value TIPPER_UP = Relay.Value.kReverse;
     public static final int TIPPER_SWITCH_UP_PORT = 5;

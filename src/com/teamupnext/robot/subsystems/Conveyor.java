@@ -2,7 +2,8 @@ package com.teamupnext.robot.subsystems;
 
 import com.teamupnext.robot.RobotMap;
 import com.teamupnext.robot.commands.ConveyorWithJoystick;
-import edu.wpi.first.wpilibj.Relay;
+//import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -13,12 +14,12 @@ public class Conveyor extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    private Relay conveyorMotor = null;
+    private Jaguar conveyorMotor = null;
 
     public Conveyor() {
         super();
 
-        conveyorMotor = new Relay(RobotMap.CONVEYOR_SPIKE_RELAY);
+        conveyorMotor = new Jaguar(RobotMap.CONVEYOR_PORT);
     }
 
     public void initDefaultCommand() {
@@ -29,15 +30,17 @@ public class Conveyor extends Subsystem {
 
     public void moveConveyorUp() {
         //motor.setDirection(CONVEYOR_UP);
-        conveyorMotor.set(RobotMap.CONVEYOR_UP);
+        //conveyorMotor.set(RobotMap.CONVEYOR_UP);
+        conveyorMotor.set(RobotMap.CONVEYOR_FORWARD);
     }
 
     public void moveConveyorDown() {
-        conveyorMotor.set(RobotMap.CONVEYOR_DOWN);
+        conveyorMotor.set(RobotMap.CONVEYOR_REVERSE);
+ 
     }
 
     public void conveyorStop() {
-        conveyorMotor.set(Relay.Value.kOff);
+        conveyorMotor.set(0);
     }
 
     public boolean isFull() {

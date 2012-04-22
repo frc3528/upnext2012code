@@ -43,7 +43,9 @@ public class DriveForwardEncoder extends CommandBase {
 
     // Called repeatedly (aprox. every 20ms)when this Command is scheduled to run
     protected void execute() {
+        //System.out.println("---> top get angle");
         angle = driveTrain.getAngle();
+        //System.out.println("---> bottom get angle");
         driveTrain.driveWithJoystick(0, -m_power, 0, Math.abs(angle) > 5 ? angle/360 : 0 );//inverted to deal with inverted y-axis
         //Logger.logMessage(LogLevel.INFO, LogLocation.DSTATION, "" + m_gyro.pidGet() );
         /*if(setFlag == false)

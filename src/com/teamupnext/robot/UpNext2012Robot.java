@@ -1,18 +1,12 @@
 package com.teamupnext.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Scheduler;
 import com.teamupnext.robot.commands.CommandBase;
-
 import com.teamupnext.robot.commands.DriveForwardDump;
-import edu.wpi.first.wpilibj.command.Command;
-
-import edu.wpi.first.wpilibj.Dashboard;
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.AnalogModule;
-import edu.wpi.first.wpilibj.DigitalModule;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.Scheduler;
 
 /**
  *
@@ -20,7 +14,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class UpNext2012Robot extends IterativeRobot {
 
-    CommandGroup autonomous;
+    //CommandGroup autonomous;
+    Command autonomous;
+    
     //SendableChooser autoChooser;
     DriverStation dStation;
 
@@ -57,14 +53,19 @@ public class UpNext2012Robot extends IterativeRobot {
         //auto = new DriveStraight();
         //auto.start();
 
-        Utils.clearDriverStation();
+        //Utils.clearDriverStation();
 
+        
+        
+        /*
         if (dStation.getDigitalIn(RobotMap.OPTION_DO_NOTHING)) //If selected, no other options are needed
         {
             Logger.logMessage(Logger.LogLevel.INFO, "Do nothing");
             return; //can skip rest of initilization
         }
-
+        */
+        
+        
         
         
         /*if (dStation.getDigitalIn(RobotMap.OPTION_DUMP_RIGHT)) //Can dump on Right or Left
@@ -98,11 +99,46 @@ public class UpNext2012Robot extends IterativeRobot {
     public void autonomousPeriodic() 
     {
         Scheduler.getInstance().run();
-    } 
+    }
+    
+    
     /*public void autonomousContinuous() {
         //Scheduler.getInstance().run();
     }*/
+    
+    
+    
+    public void autonomousContinuous() {
+        
+    }
+    
+    public void disabledInit() {
+        
+    }
+    
+    
+    public void teleopInit() {
+        
+    }
+    
+    public void teleopContinuous() {
+        
+    }
+    
+    
+    public void disabledPeriodic() {
+        
+    }
+    
+    
+    public void disabledContinuous() {
+        
+    }
+    
 
+    
+    
+    /*
     void updateDashboard() {
         Dashboard lowDashData = DriverStation.getInstance().getDashboardPackerLow();
         lowDashData.addCluster();
@@ -179,4 +215,6 @@ public class UpNext2012Robot extends IterativeRobot {
         lowDashData.commit();
 
     }
+    * 
+    */
 }

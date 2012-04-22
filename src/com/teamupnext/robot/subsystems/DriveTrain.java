@@ -1,13 +1,11 @@
 package com.teamupnext.robot.subsystems;
 
-import com.teamupnext.robot.Logger;
-import com.teamupnext.robot.Logger.LogLevel;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import com.teamupnext.robot.commands.DriveWithJoystick;
 import com.teamupnext.robot.RobotMap;
-import edu.wpi.first.wpilibj.can.CANTimeoutException;
-import edu.wpi.first.wpilibj.*;
 import com.teamupnext.robot.Utils;
+import com.teamupnext.robot.commands.DriveWithJoystick;
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
@@ -44,9 +42,9 @@ public class DriveTrain extends Subsystem {
         //Inverts the right side of the robot
         drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);//
         drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        drive.setSafetyEnabled(false);
+        //drive.setSafetyEnabled(false);
 
-        rangeFinder = new AnalogChannel(RobotMap.RANGEFINDER_PORT);
+        //rangeFinder = new AnalogChannel(RobotMap.RANGEFINDER_PORT);
 
         try {
             //jagBackLeft.changeControlMode(CANJaguar.ControlMode.kPosition);
