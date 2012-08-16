@@ -47,18 +47,6 @@ public class Logger {
     private static final double m_iterationTime = .02;//the scheduler runs the code throught at 20ms increments
     private static double lastPrint;
 
-    //Structure for output: [stamp][LEVEL]: message
-    /*
-    public Logger()
-    {
-    this(LogLevel.INFO);
-    }
-    
-    public Logger(LogLevel fence)
-    {
-    m_fence = fence;
-    }
-     */
     public static void logMessage(LogLevel level, String message)//prints to both
     {
         if (level.value >= m_fence.value && ((Timer.getFPGATimestamp() - lastPrint) >= m_iterationTime * m_counter)) {

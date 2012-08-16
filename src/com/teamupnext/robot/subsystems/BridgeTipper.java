@@ -18,14 +18,11 @@ public class BridgeTipper extends Subsystem {
     private int count = 0;
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
         motor = new Relay(RobotMap.BRIDGE_RELAY_PORT);
         microSwitchUp = new DigitalInput(RobotMap.TIPPER_SWITCH_UP_PORT);
     }
 
     public void LowerTipper() {
-        //System.out.println("lowering tipper");
         motor.set(RobotMap.TIPPER_DOWN);
     }
 
@@ -35,14 +32,12 @@ public class BridgeTipper extends Subsystem {
             count++;
             return;
         }
-
-        //System.out.println("raising tipper");
+        
         motor.set(RobotMap.TIPPER_UP);
         count = 0;
     }
 
     public void StopTipper() {
-        //System.out.println("Stopping tipper");
         motor.set(Relay.Value.kOff);
     }
 
