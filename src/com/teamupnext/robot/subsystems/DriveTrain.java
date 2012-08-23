@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
  * @author Up Next!
  */
 public class DriveTrain extends Subsystem {
@@ -24,17 +23,10 @@ public class DriveTrain extends Subsystem {
     private static final double D = 0.0;
 
     public DriveTrain() {
+        
         super();
-
-        try {
-            jagFrontRight = new CANJaguar(RobotMap.FRONT_RIGHT_MOTOR);
-            jagFrontLeft = new CANJaguar(RobotMap.FRONT_LEFT_MOTOR);
-            jagBackLeft = new CANJaguar(RobotMap.BACK_LEFT_MOTOR);
-            jagBackRight = new CANJaguar(RobotMap.BACK_RIGHT_MOTOR);
-
-        } catch (CANTimeoutException e) {
-            System.out.println(e.getMessage());
-        }
+        
+        setJagLocations();
         
         drive = new RobotDrive(jagFrontLeft, jagBackLeft, jagFrontRight, jagBackRight);
         drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);//
@@ -195,6 +187,18 @@ public class DriveTrain extends Subsystem {
     public void resetGyro()
     {
         m_gyro.reset();
+    }
+    
+    private void setJagLocations() {
+       try {
+            jagFrontRight = new CANJaguar(RobotMap.FRONT_RIGHT_MOTOR);
+            jagFrontLeft = new CANJaguar(RobotMap.FRONT_LEFT_MOTOR);
+            jagBackLeft = new CANJaguar(RobotMap.BACK_LEFT_MOTOR);
+            jagBackRight = new CANJaguar(RobotMap.BACK_RIGHT_MOTOR);
+
+        } catch (CANTimeoutException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     private void initializeJag(CANJaguar jag) {

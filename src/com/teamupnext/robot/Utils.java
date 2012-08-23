@@ -1,6 +1,5 @@
 package com.teamupnext.robot;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 import java.util.Vector;
 
@@ -21,7 +20,6 @@ public class Utils {
         }
 
         return input;
-
     }
 
     //A method used for smooth driving
@@ -34,7 +32,6 @@ public class Utils {
 
         //formula for ramping: f(x) = ax^3 + (1-a)x where a is the sensitivity and x is the input
         return (sensitivity * input * input * input + (1 - sensitivity) * input);
-
     }
 
     public static double rampSpeed(double input) {
@@ -57,13 +54,12 @@ public class Utils {
         if (v.size() > lcdsize) {
             v.removeElementAt(0);
         } else {
-            int size = v.size();
-            int add = lcdsize - size;
+            int add = lcdsize - v.size();
 
             for (int i = 0; i < add; i++) {
                 v.addElement("");
             }
-        }
+        }   
 
         dslcd.println(DriverStationLCD.Line.kMain6, 1, (String) v.elementAt(5) + clear);
         dslcd.println(DriverStationLCD.Line.kUser2, 1, (String) v.elementAt(4) + clear);
@@ -71,8 +67,6 @@ public class Utils {
         dslcd.println(DriverStationLCD.Line.kUser4, 1, (String) v.elementAt(2) + clear);
         dslcd.println(DriverStationLCD.Line.kUser5, 1, (String) v.elementAt(1) + clear);
         dslcd.println(DriverStationLCD.Line.kUser6, 1, (String) v.elementAt(0) + clear);
-
-        DriverStation d = DriverStation.getInstance();
 
         dslcd.updateLCD();
     }

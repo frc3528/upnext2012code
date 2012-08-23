@@ -3,9 +3,9 @@ package com.teamupnext.robot;
 import edu.wpi.first.wpilibj.Timer;
 
 /**
- *
  * @author Up Next!
  */
+
 public class Logger {
 
     public static class LogLevel {
@@ -40,6 +40,7 @@ public class Logger {
             value = val;
         }
     }
+    
     private static String m_stamp = "DFTBA";
     private static String m_constructedMessage;
     private static LogLevel m_fence = LogLevel.INFO;
@@ -50,15 +51,13 @@ public class Logger {
     public static void logMessage(LogLevel level, String message)//prints to both
     {
         if (level.value >= m_fence.value && ((Timer.getFPGATimestamp() - lastPrint) >= m_iterationTime * m_counter)) {
-            //m_stamp = "" + lastPrint;
-            m_constructedMessage = m_constructedMessage = constructString(level, message);
+            m_constructedMessage = constructString(level, message);
 
             Utils.printToDriverStation(m_constructedMessage);
             System.out.println(m_constructedMessage);
 
             lastPrint = Timer.getFPGATimestamp();
         }
-
     }
 
     public static void logMessage(LogLevel level, LogLocation outLocation, String message) {
@@ -73,9 +72,7 @@ public class Logger {
             }
 
             lastPrint = Timer.getFPGATimestamp();
-
         }
-
     }
 
     public static void setFence(LogLevel fence) {
