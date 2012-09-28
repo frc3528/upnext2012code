@@ -80,8 +80,8 @@ public class RobotMap {
     //End Bridge Tipper Constants
     //Dump Constants
     public static final int DUMP_SERVO_CHANNEL = 5;
-    public static final int DUMP_SERVO_UP = 60;
-    public static final int DUMP_SERVO_RESET = 150;
+    public static final int DUMP_SERVO_UP = 15;
+    public static final int DUMP_SERVO_RESET = 95;
     public static final int DUMP_TIMEOUT = 5;
     //End Dump Constants
     //Encoder Constants
