@@ -40,8 +40,8 @@ public abstract class CommandBase extends Command {
 
         // Show what command your subsystem is running on the SmartDashboard
         //SmartDashboard.putData(exampleSubsystem);
-        SmartDashboard.putData("SchedulerData", Scheduler.getInstance());
-        SmartDashboard.putData(conveyor);
+        //SmartDashboard.putData("SchedulerData", Scheduler.getInstance());
+        //SmartDashboard.putData(conveyor);
 
 
     }
