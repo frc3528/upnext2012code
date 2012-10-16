@@ -1,6 +1,6 @@
 MIDlet-Name: UpNext2012Robot
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
-MIDlet-1: UpNext2012RobotOld, ,  com.teamupnext.robot.UpNext2012Robot
+MIDlet-1: UpNext2012Robot, ,  com.teamupnext.robot.UpNext2012Robot
 MicroEdition-Profile: IMP-1.0
 MicroEdition-Configuration: CLDC-1.1
