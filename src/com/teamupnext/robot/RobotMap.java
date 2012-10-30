@@ -72,7 +72,7 @@ public class RobotMap {
     //Bridge Tipper Constants
     public static final int BRIDGE_RELAY_PORT = 4;
     public static final double BRIDGE_TIME_TO_UP = 3;
-    public static final double BRIDGE_TIME_TO_DOWN = .5;
+    public static final double BRIDGE_TIME_TO_DOWN = .7;
     public static final Relay.Value TIPPER_DOWN = Relay.Value.kForward;
     public static final Relay.Value TIPPER_UP = Relay.Value.kReverse;
     public static final int TIPPER_SWITCH_UP_PORT = 5;
