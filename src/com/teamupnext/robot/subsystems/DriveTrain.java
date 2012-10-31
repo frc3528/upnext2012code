@@ -64,7 +64,8 @@ public class DriveTrain extends Subsystem {
 
     public void setFrontRightPower(double power) {
         try {
-            jagFrontRight.set(power);
+            //jagFrontRight.set(power);
+            jagFrontRight.setX(power);
         } catch (Exception e) {
             System.out.println("Error seting Front Right power: " + e.getMessage());
         }

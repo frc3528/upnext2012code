@@ -26,7 +26,7 @@ public class BridgeTipper extends Subsystem {
         motor.set(RobotMap.TIPPER_DOWN);
     }
 
-    public void RaiseTipper() {
+    public void RaiseTipperJittery() {
         if (count < RobotMap.COUNT_MAX) {
             StopTipper();
             count++;
@@ -35,6 +35,10 @@ public class BridgeTipper extends Subsystem {
         
         motor.set(RobotMap.TIPPER_UP);
         count = 0;
+    }
+    
+    public void RaiseTipperSmooth() {
+        motor.set(RobotMap.TIPPER_UP);
     }
 
     public void StopTipper() {

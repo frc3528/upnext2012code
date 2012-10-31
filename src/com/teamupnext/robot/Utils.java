@@ -61,7 +61,7 @@ public class Utils {
             }
         }   
 
-        dslcd.println(DriverStationLCD.Line.kMain6, 1, (String) v.elementAt(5) + clear);
+        dslcd.println(DriverStationLCD.Line.kUser1, 1, (String) v.elementAt(5) + clear);
         dslcd.println(DriverStationLCD.Line.kUser2, 1, (String) v.elementAt(4) + clear);
         dslcd.println(DriverStationLCD.Line.kUser3, 1, (String) v.elementAt(3) + clear);
         dslcd.println(DriverStationLCD.Line.kUser4, 1, (String) v.elementAt(2) + clear);
