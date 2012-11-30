@@ -15,7 +15,7 @@ public class Utils {
         //the max value on blocks is 432.4090576171875
 
         //setting a deadband of -.1 to .1 for the input and only correcting if the actual velocity is changing fastre than .1
-        if ((input > -.1 && input < .1) && (actualVelocity < -.1 || actualVelocity > .1)) {
+        if ((IsInDeadband(input)) && (actualVelocity < -.1 || actualVelocity > .1)) {
             return -actualVelocity;
         }
 
@@ -23,20 +23,23 @@ public class Utils {
     }
 
     //A method used for smooth driving
+    public static double rampSpeed(double input) {
+        //auto set sensitivity to .5
+        return rampSpeed(input, .5);
+    }
+    
     public static double rampSpeed(double input, double sensitivity) {
 
-        // dead band of -.1 to .1
-        if (input > -.1 && input < .1) {
+        if (IsInDeadband(input)) {
             return 0;
         }
 
         //formula for ramping: f(x) = ax^3 + (1-a)x where a is the sensitivity and x is the input
         return (sensitivity * input * input * input + (1 - sensitivity) * input);
     }
-
-    public static double rampSpeed(double input) {
-        //auto set sensitivity to .5
-        return rampSpeed(input, .5);
+    
+    private static boolean IsInDeadband(double input) {
+        return input > -.1 && input < .1;
     }
 
     //Filters the input using a low pass filter

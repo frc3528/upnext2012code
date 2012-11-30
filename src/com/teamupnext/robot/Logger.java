@@ -27,6 +27,12 @@ public class Logger {
             name = levels[val];
         }
     }
+    
+    public static class LogOutLocation {
+        public static final int SysOut = 1;
+        public static final int DStation = 2;
+        public static final int SomeOtherPlace = 4;
+    }
 
     public static class LogLocation {
 
@@ -41,6 +47,7 @@ public class Logger {
         }
     }
     
+    private static int m_outLocations = 0;
     private static String m_stamp = "DFTBA";
     private static String m_constructedMessage;
     private static LogLevel m_fence = LogLevel.INFO;
@@ -53,21 +60,11 @@ public class Logger {
         if (level.value >= m_fence.value && ((Timer.getFPGATimestamp() - lastPrint) >= m_iterationTime * m_counter)) {
             m_constructedMessage = constructString(level, message);
 
-            Utils.printToDriverStation(m_constructedMessage);
-            System.out.println(m_constructedMessage);
-
-            lastPrint = Timer.getFPGATimestamp();
-        }
-    }
-
-    public static void logMessage(LogLevel level, LogLocation outLocation, String message) {
-        if (level.value >= m_fence.value && ((Timer.getFPGATimestamp() - lastPrint) >= m_iterationTime * m_counter)) {
-            m_stamp = "" + lastPrint;
-            m_constructedMessage = constructString(level, message);
-
-            if (outLocation.value == LogLocation.SYS_OUT.value) {
+            if ((m_outLocations & LogOutLocation.SysOut) == LogOutLocation.SysOut) {
                 System.out.println(m_constructedMessage);
-            } else {
+            } 
+            
+            if((m_outLocations & LogOutLocation.DStation) == LogOutLocation.DStation) {
                 Utils.printToDriverStation(m_constructedMessage);
             }
 
@@ -75,6 +72,28 @@ public class Logger {
         }
     }
 
+    public static void logMessage(LogLevel level, int outLocation, String message) {
+        if (level.value >= m_fence.value && ((Timer.getFPGATimestamp() - lastPrint) >= m_iterationTime * m_counter)) {
+            m_stamp = "" + lastPrint;
+            m_constructedMessage = constructString(level, message);
+
+            if ((outLocation & LogOutLocation.SysOut) == LogOutLocation.SysOut) {
+                System.out.println(m_constructedMessage);
+            } 
+            
+            if((outLocation & LogOutLocation.DStation) == LogOutLocation.DStation) {
+                Utils.printToDriverStation(m_constructedMessage);
+            }
+
+            lastPrint = Timer.getFPGATimestamp();
+        }
+    }
+
+    public static void setOutLocations(int outLocations)
+    {
+        m_outLocations = outLocations;
+    }
+    
     public static void setFence(LogLevel fence) {
         m_fence = fence;
     }
