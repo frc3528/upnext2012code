@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "GitHub"]
+        url = https://github.com/frc3528/upnext2012robot.git
+        fetch = +refs/heads/*:refs/remotes/GitHub/*
+[remote "GoogleCode"]
+        url = https://code.google.com/p/frc3528.upnext2012robot/
+        fetch = +refs/heads/*:refs/remotes/GoogleCode/*
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = https://code.google.com/p/frc3528.upnext2012robot/
+	pushurl = https://code.google.com/p/frc3528.upnext2012robot/
+	pushurl = https://github.com/frc3528/upnext2012robot.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
