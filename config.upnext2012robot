@@ -12,7 +12,7 @@
         fetch = +refs/heads/*:refs/remotes/GoogleCode/*
 [remote "origin"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
-	url = https://code.google.com/p/frc3528.upnext2012robot/
+	url = https://github.com/frc3528/upnext2012robot.git
 	pushurl = https://code.google.com/p/frc3528.upnext2012robot/
 	pushurl = https://github.com/frc3528/upnext2012robot.git
 [branch "master"]
