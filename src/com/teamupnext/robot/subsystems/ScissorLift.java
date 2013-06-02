@@ -2,7 +2,7 @@ package com.teamupnext.robot.subsystems;
 
 import com.teamupnext.robot.RobotMap;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -16,16 +16,16 @@ public class ScissorLift extends Subsystem {
     //private Relay scissorMotor = null;
     private DigitalInput microswitchHigh;
     private DigitalInput microswitchLow;
-    private Jaguar scissorMotor = null;
+    private Talon scissorMotor = null;
 
     public ScissorLift() {
         microswitchHigh = new DigitalInput(RobotMap.SCISSOR_HIGH_SWITCH);
         microswitchLow = new DigitalInput(RobotMap.SCISSOR_LOW_SWITCH);
 
         try {
-            scissorMotor = new Jaguar(RobotMap.SCISSOR_MOTOR);
+            scissorMotor = new Talon(RobotMap.SCISSOR_MOTOR);
         } catch (Exception e) {
-            System.out.println("Error intializing scissor jag " + e.getMessage());
+            System.out.println("Error intializing scissor talon " + e.getMessage());
         }
     }
 
