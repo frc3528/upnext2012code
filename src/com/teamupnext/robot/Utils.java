@@ -14,7 +14,7 @@ public class Utils {
         double normalVelocity = actualVelocity / RobotMap.MAX_FLAT_VELOCITY;
         //the max value on blocks is 432.4090576171875
 
-        //setting a deadband of -.1 to .1 for the input and only correcting if the actual velocity is changing fastre than .1
+        //setting a deadband of -.1 to .1 for the input and only correcting if the actual velocity is changing faster than .1
         if ((IsInDeadband(input)) && (actualVelocity < -.1 || actualVelocity > .1)) {
             return -actualVelocity;
         }

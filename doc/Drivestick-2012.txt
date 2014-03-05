@@ -1,0 +1,37 @@
+drivestick (1)
+
+
+A button = 
+
+B button = 
+
+X button = 
+
+Y button = 
+
+L bumper = lower scissor lift
+
+R bumper = raise scissor lift 
+
+Back button =
+
+Start button = 
+
+Left thumb stick click = 
+
+Right thumb stick click = 
+
+left stick x = Drive
+
+left stick y = Drive
+
+Left trigger = Drive
+ 
+Right trigger = Drive 
+
+Right stick x = 
+
+Right stick y = 
+
+D pad left/right = 
+

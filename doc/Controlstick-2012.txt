@@ -1,0 +1,36 @@
+controlstick (2)
+
+
+A button = raise servo
+
+B button = 
+
+X button = lower bridge tipper
+
+Y button = raise bridge tipper
+
+L bumper = 
+
+R bumper = 
+
+Back button = 
+
+Start button = 
+
+Left thumb stick click = 
+
+Right thumb stick click = 
+
+left stick x = 
+
+left stick y = run ball gatherer
+
+Left trigger =
+ 
+Right trigger = 
+
+Right stick x = 
+
+Right stick y = 
+
+D pad left/right = 
